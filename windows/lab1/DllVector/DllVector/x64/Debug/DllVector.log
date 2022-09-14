@@ -1,0 +1,24 @@
+﻿  pch.cpp
+  dllmain.cpp
+  Vector.cpp
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.h(32,10): warning C4251: Vector::x_: class "Number" должен иметь dll-интерфейс для использования клиентами class "Vector"
+C:\Users\Dima\source\repos\Number\Number\Number.h(7): message : см. объявление "Number"
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.h(33,10): warning C4251: Vector::y_: class "Number" должен иметь dll-интерфейс для использования клиентами class "Vector"
+C:\Users\Dima\source\repos\Number\Number\Number.h(7): message : см. объявление "Number"
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.cpp(9,9): warning C4273: Vector::Vector: несовместимое связывание dll
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.h(18,3): message : см. предыдущее определение "{ctor}"
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.cpp(11,16): warning C4273: Vector::getRadius: несовместимое связывание dll
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.h(24,10): message : см. предыдущее определение "getRadius"
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.cpp(15,16): warning C4273: Vector::getX: несовместимое связывание dll
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.h(28,10): message : см. предыдущее определение "getX"
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.cpp(19,16): warning C4273: Vector::getY: несовместимое связывание dll
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.h(30,10): message : см. предыдущее определение "getY"
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.cpp(23,16): warning C4273: Vector::addVector: несовместимое связывание dll
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.h(26,10): message : см. предыдущее определение "addVector"
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.cpp(27,16): warning C4273: Vector::getAngle: несовместимое связывание dll
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.h(22,10): message : см. предыдущее определение "getAngle"
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.cpp(40,15): warning C4273: vectorConstants::ONE_ONE: несовместимое связывание dll
+C:\Users\Dima\source\repos\DllVector\DllVector\Vector.h(36,46): message : см. предыдущее определение "ONE_ONE"
+  Создание кода...
+     Создается библиотека C:\Users\Dima\source\repos\DllVector\x64\Debug\DllVector.lib и объект C:\Users\Dima\source\repos\DllVector\x64\Debug\DllVector.exp
+  DllVector.vcxproj -> C:\Users\Dima\source\repos\DllVector\x64\Debug\DllVector.dll

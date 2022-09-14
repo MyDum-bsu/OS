@@ -1,0 +1,6 @@
+﻿  test.cpp
+C:\Users\Dima\source\repos\DllVector\DllVector\vector.h(32,10): warning C4251: Vector::x_: class "Number" должен иметь dll-интерфейс для использования клиентами class "Vector"
+C:\Users\Dima\source\repos\Number\Number\Number.h(7): message : см. объявление "Number"
+C:\Users\Dima\source\repos\DllVector\DllVector\vector.h(33,10): warning C4251: Vector::y_: class "Number" должен иметь dll-интерфейс для использования клиентами class "Vector"
+C:\Users\Dima\source\repos\Number\Number\Number.h(7): message : см. объявление "Number"
+  test.vcxproj -> C:\Users\Dima\source\repos\test\x64\Debug\test.exe
