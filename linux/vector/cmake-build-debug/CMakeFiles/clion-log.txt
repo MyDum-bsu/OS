@@ -1,0 +1,13 @@
+/snap/clion/206/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/206/bin/ninja/linux/ninja -G Ninja -S /home/mydum/CLionProjects/OS/vector -B /home/mydum/CLionProjects/OS/vector/cmake-build-debug
+-- Configuring done
+CMake Error at CMakeLists.txt:6 (add_library):
+  Cannot find source file:
+
+    ../enter/dungeon_master.cpp
+
+
+CMake Error at CMakeLists.txt:6 (add_library):
+  No SOURCES given to target: vector
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
