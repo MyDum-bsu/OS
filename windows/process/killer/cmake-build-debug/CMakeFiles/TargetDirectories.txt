@@ -1,0 +1,3 @@
+C:/Users/Dima/gitable/OS/windows/process/killer/cmake-build-debug/CMakeFiles/killer.dir
+C:/Users/Dima/gitable/OS/windows/process/killer/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Dima/gitable/OS/windows/process/killer/cmake-build-debug/CMakeFiles/rebuild_cache.dir

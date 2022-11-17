@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Users/Dima/gitable/OS/windows/process/killer/cmake-build-debug/CMakeFiles/killer.dir/embed.manifest"
