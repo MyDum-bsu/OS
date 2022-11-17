@@ -10,3 +10,5 @@
 [Lab 3](https://github.com/MyDum-bsu/OS/tree/main/General/lab3) - buffered channel
 
 [Lab 4](https://github.com/MyDum-bsu/OS/tree/main/General/lab4) - Lab2 + Lab3
+
+[Lab_5](https://github.com/MyDum-bsu/OS/tree/main/windows/process) - User + Killer
