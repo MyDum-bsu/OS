@@ -14,3 +14,7 @@
 [Lab 5 for Windows](https://github.com/MyDum-bsu/OS/tree/main/windows/process) - User + Killer
 
 [Lab 5 for Linux](https://github.com/MyDum-bsu/OS/tree/main/linux/process) - User + Killer
+
+[Pipe for Windows](https://github.com/MyDum-bsu/OS/tree/main/windows/pipe)
+
+[Pipe for Linux](https://github.com/MyDum-bsu/OS/tree/main/linux/pipe)
