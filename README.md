@@ -5,7 +5,9 @@
 
 [Lab 2](https://github.com/MyDum-bsu/OS/tree/main/General/lab2) - matrix multiplication for all platforms
 
-[Lab 2](https://github.com/MyDum-bsu/OS/tree/main/windows/lab2) - matrix multiplication for windows
+[Lab 2 for Windows](https://github.com/MyDum-bsu/OS/tree/main/windows/lab2) - matrix multiplication
+
+[Lab 2 for Linux](https://github.com/MyDum-bsu/OS/tree/main/linux/lab2) - matrix multiplication
 
 [Lab 3](https://github.com/MyDum-bsu/OS/tree/main/General/lab3) - buffered channel
 
