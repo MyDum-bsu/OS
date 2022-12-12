@@ -2,8 +2,19 @@
 #include <random>
 #include <chrono>
 #include <vector>
-#include <thread>
 #include <algorithm>
+
+struct Params {
+    const std::vector<int> &A, &B;
+    std::vector<int> &C;
+    int n;
+    int blockSize;
+    int i;
+    int j;
+
+    Params(const std::vector<int> &A, const std::vector<int> &B, std::vector<int> &C, int n, int blockSize, int i,
+           int j) : A(A), B(B), C(C), n(n), blockSize(blockSize), i (i), j(j) {}
+};
 
 std::vector<int> generateMatrix(int n) {
     std::vector<int> matrix(n * n);
@@ -39,14 +50,23 @@ std::vector<int> multiplyMatrixSequentially(const std::vector<int> &A, const std
 std::vector<int> multiplyMatrixWithThread(const std::vector<int> &A, const std::vector<int> &B, int blockSize) {
     int matrixSize = (int) std::sqrt(A.size());
     std::vector<int> C(matrixSize * matrixSize, 0);
-    std::vector<std::thread> threads;
+    std::vector<pthread_t> threads;
     for (int i = 0; i < matrixSize; i += blockSize) {
         for (int j = 0; j < matrixSize; j += blockSize) {
-            threads.emplace_back(multiplyBlocks, std::cref(A), std::cref(B), std::ref(C), matrixSize, blockSize, i, j);
+            auto *params = new Params(A, B, C, matrixSize, blockSize, i, j);
+            pthread_t pthread;
+            void *(*func)(void *) = [](void* params1) -> void * {
+                Params p = *((Params *) params1);
+                multiplyBlocks(p.A, p.B, p.C, p.n, p.blockSize, p.i, p.j);
+                return nullptr;
+            };
+//            threads.emplace_back(multiplyBlocks, std::cref(A), std::cref(B), std::ref(C), matrixSize, blockSize, i, j);
+            pthread_create(&pthread, nullptr, func, (void*) params);
+            threads.push_back(pthread);
         }
     }
-    for (std::thread &thread: threads) {
-        thread.join();
+    for (auto thread: threads) {
+        pthread_join(thread, nullptr);
     }
     return C;
 }
@@ -81,7 +101,7 @@ void run(int n) {
     for (int i = 0; i < n - 1; i++) {
         double temp = 1. * timeDependence[i + 1] / timeDependence[n + i + 1];
         if (temp > efficient) {
-            blockSizeOfMostEffective = i+1;
+            blockSizeOfMostEffective = i + 1;
             efficient = temp;
         }
         std::cout << "Block size: " << i + 1 << " Amount of blocks: " << ceil((n * 1. / (i + 1))) * n
@@ -89,7 +109,8 @@ void run(int n) {
                   << " Delta for thread: " << timeDependence[n + i + 1] << " Efficient: "
                   << 1. * timeDependence[i + 1] / timeDependence[n + i + 1] << std::endl;
     }
-    std::cout << "\nBlock size with most effective multithreading: " << blockSizeOfMostEffective << " Speed up: " << efficient;
+    std::cout << "\nBlock size with most effective multithreading: " << blockSizeOfMostEffective << " Speed up: "
+              << efficient;
 }
 
 int main() {
