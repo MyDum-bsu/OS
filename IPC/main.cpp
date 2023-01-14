@@ -1,6 +1,8 @@
 #include "socket/client/client.h"
 #include "socket/server/server.h"
 
+void write_to_server(Client client, const char *message);
+
 void child() {
     Client client("socket.server");
     client.Write("hi");
@@ -23,12 +25,18 @@ void parent() {
 int main() {
     Server server("s.server");
     Client client("s.server");
-    int pid = fork();
-    if (pid == 0) {
+    pid_t pid = fork();
+    if (0 == pid) {
         client.Write("Hello, I'm client");
-    }
+    } else {
         puts(server.Receive());
         server.Send("Hello, I'm server");
+    }
+    if (0 == pid) {
         puts(client.Read());
-        server.Close();
+        _exit(0);
+    }
+    server.Close();
+    return 0;
 }
+

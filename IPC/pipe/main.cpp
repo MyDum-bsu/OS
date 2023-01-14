@@ -23,18 +23,19 @@ void write_to_channel(int channel[2], const char *data) {
 
 int main() {
     int first_channel[2];
+    int second_channel[2];
     pipe(first_channel);
+    pipe(second_channel);
     pid_t pid = fork();
     if (0 == pid) {
         close(first_channel[0]);
         write_to_channel(first_channel, "Hello");
+    } else {
+        close(first_channel[1]);
+        read_from_channel(first_channel);
+        write_to_channel(second_channel, "Dad");
     }
-    close(first_channel[1]);
-    read_from_channel(first_channel);
 
-    int second_channel[2];
-    pipe(second_channel);
-    write_to_channel(second_channel, "Dad");
     if (0 == pid) {
         close(second_channel[1]);
         read_from_channel(second_channel);
